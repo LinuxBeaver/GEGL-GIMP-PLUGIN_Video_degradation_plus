@@ -1,3 +1,6 @@
+![image](https://github.com/LinuxBeaver/Fork-of-gegl-video-degradation/assets/78667207/1797520d-c00a-48d9-aef3-111212506878)
+
+
 ## OS specific location to put GEGL Filter binaries 
 
 Windows
