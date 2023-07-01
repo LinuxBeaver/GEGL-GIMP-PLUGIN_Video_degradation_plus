@@ -27,6 +27,14 @@
  * in default gegl:video-degradation works as if it blended with the "Overlay" blend mode
  * and users are not free to change blend modes. Beaver's fork allows users to choose their blend
  * mode using Gimp's blend modes.
+
+If you give this information to Gimp's GEGL Graph you can recreate the plugin without installing i.t 
+
+id=1 src  aux=[ ref=1 color value=#808080 ] crop
+video-degradation
+hue-chroma chroma=0 
+lens-distortion zoom=0
+
  */
 
 
@@ -71,8 +79,6 @@ property_boolean (rotated, _("Rotated"), FALSE)
 #define APPLY_VIDEO_DEGRADATION_ON_THIS \
 " id=1 src  aux=[ ref=1 color value=#808080 ] crop "\
 
-property_string (graph, _("HiddenGraph"), APPLY_VIDEO_DEGRADATION_ON_THIS)
-    ui_meta     ("role", "output-extent")
 
 property_double (chroma, _("Chroma Color Enhancer"), 0.0)
    description  (_("Chroma adjustment"))
@@ -113,7 +119,7 @@ static void attach (GeglOperation *operation)
 
 
   graph = gegl_node_new_child (gegl,
-                                  "operation", "gegl:gegl",
+                                  "operation", "gegl:gegl", "string", APPLY_VIDEO_DEGRADATION_ON_THIS,
                                   NULL);
 
  gegl_operation_meta_redirect (operation, "additive", video, "additive");
@@ -137,9 +143,9 @@ gegl_op_class_init (GeglOpClass *klass)
   operation_class->attach = attach;
 
   gegl_operation_class_set_keys (operation_class,
-    "name",        "gegl:video-degradation-mod",
+    "name",        "lb:video-degradation-mod",
     "title",       _("Video Degradation mod"),
-    "categories",  "Aristic",
+    "categories",  "Artistic",
     "reference-hash", "mod456j6bfghd50f435sf27ac",
     "description", _("Add scan lines and dots reminiscent of an old video monitor. This filter is a fork of GEGL's existing video-degradation filter. Please blend this with Gimp blend modes. (Fusing with Overlay resembles default) but Grain Extract and others create interesting effects."
                      ""),
