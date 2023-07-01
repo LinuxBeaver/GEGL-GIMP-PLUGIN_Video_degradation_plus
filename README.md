@@ -1,3 +1,8 @@
+## GEGL Video Degradation made better.
+In default the Video Degradation filter in Gimp fuses with the overlay blend mode and it does not apply on a layer above non-destructively.
+My plugin allows blend mode switching and non-destructive extraction of the video line effect. It also has a chroma and enlarge effect slider.
+
+
 ![image](https://github.com/LinuxBeaver/Fork-of-gegl-video-degradation/assets/78667207/1797520d-c00a-48d9-aef3-111212506878)
 
 
@@ -51,6 +56,16 @@ Then build the same way you would on Linux:
 meson setup --buildtype=release build
 ninja -C build
 ```
+
+## Screenshots of it fusing with non default blend mode (overlay).
+
+![image](https://github.com/LinuxBeaver/Fork-of-gegl-video-degradation/assets/78667207/516c3a04-9de0-4e92-b43a-b3ccafbc9382)
+
+![image](https://github.com/LinuxBeaver/Fork-of-gegl-video-degradation/assets/78667207/19307ebd-9afd-462c-a48f-e8979fb4ce98)
+
+![image](https://github.com/LinuxBeaver/Fork-of-gegl-video-degradation/assets/78667207/9e0b7d35-5ab7-4a7e-bdfe-a2e048ae7280)
+
+
 
 
 
