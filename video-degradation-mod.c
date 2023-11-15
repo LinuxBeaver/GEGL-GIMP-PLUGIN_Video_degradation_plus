@@ -86,7 +86,7 @@ property_double (chroma, _("Chroma Color Enhancer"), 0.0)
 
 property_double (zoom, _("Size Increasement"), 0.0)
    description  (_("Size Increasement of the degradation effect."))
-   value_range  (0.0, 100.0)
+   value_range  (0.00, 100.0)
 
 #else
 
@@ -125,7 +125,6 @@ static void attach (GeglOperation *operation)
  gegl_operation_meta_redirect (operation, "additive", video, "additive");
  gegl_operation_meta_redirect (operation, "rotated", video, "rotated");
  gegl_operation_meta_redirect (operation, "pattern", video, "pattern");
- gegl_operation_meta_redirect (operation, "graph", graph, "string");
  gegl_operation_meta_redirect (operation, "zoom", zoom, "zoom");
  gegl_operation_meta_redirect (operation, "chroma", chroma, "chroma");
 
@@ -145,7 +144,6 @@ gegl_op_class_init (GeglOpClass *klass)
   gegl_operation_class_set_keys (operation_class,
     "name",        "lb:video-degradation-mod",
     "title",       _("Video Degradation mod"),
-    "categories",  "Artistic",
     "reference-hash", "mod456j6bfghd50f435sf27ac",
     "description", _("Add scan lines and dots reminiscent of an old video monitor. This filter is a fork of GEGL's existing video-degradation filter. Please blend this with Gimp blend modes. (Fusing with Overlay resembles default) but Grain Extract and others create interesting effects."
                      ""),
