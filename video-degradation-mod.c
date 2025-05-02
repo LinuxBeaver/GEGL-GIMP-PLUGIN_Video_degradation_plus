@@ -77,7 +77,7 @@ property_boolean (rotated, _("Rotated"), FALSE)
 
 
 #define APPLY_VIDEO_DEGRADATION_ON_THIS \
-" id=1 src  aux=[ ref=1 color value=#808080 ] crop "\
+" id=1 src  aux=[ ref=1 color value=#808080 ] id=2 crop aux=[ ref=2 ] "\
 
 
 property_double (chroma, _("Chroma Color Enhancer"), 0.0)
