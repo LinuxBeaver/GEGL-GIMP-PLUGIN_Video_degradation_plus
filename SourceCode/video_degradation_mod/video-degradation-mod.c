@@ -23,12 +23,12 @@
  *
  * GEGL port: Thomas Manni <thomas.manni@free.fr>
  *
- * 2023, Beaver's fork that allows Video Degradation to blend with all of Gimp's blend modes.
+ * 2023, Beaverꞌs fork that allows Video Degradation to blend with all of Gimpꞌs blend modes.
  * in default gegl:video-degradation works as if it blended with the "Overlay" blend mode
- * and users are not free to change blend modes. Beaver's fork allows users to choose their blend
- * mode using Gimp's blend modes.
+ * and users are not free to change blend modes. Beaverꞌs fork allows users to choose their blend
+ * mode using Gimpꞌs blend modes.
 
-If you give this information to Gimp's GEGL Graph you can recreate the plugin without installing i.t 
+If you give this information to Gimpꞌs GEGL Graph you can recreate the plugin without installing i.t 
 
 id=1 src  aux=[ ref=1 color value=#808080 ] crop
 video-degradation
@@ -145,7 +145,7 @@ gegl_op_class_init (GeglOpClass *klass)
     "name",        "lb:video-degradation-mod",
     "title",       _("Video Degradation mod"),
     "reference-hash", "mod456j6bfghd50f435sf27ac",
-    "description", _("Add scan lines and dots reminiscent of an old video monitor. This filter is a fork of GEGL's existing video-degradation filter. Please blend this with Gimp blend modes. (Fusing with Overlay resembles default) but Grain Extract and others create interesting effects."
+    "description", _("Add scan lines and dots reminiscent of an old video monitor. This filter is a fork of GEGLꞌs existing video-degradation filter. Please blend this with Gimp blend modes. (Fusing with Overlay resembles default) but Grain Extract and others create interesting effects."
                      ""),
     NULL);
 }
